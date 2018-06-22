@@ -1,3 +1,18 @@
 // Place all the styles related to the Members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.field{
+    float: left;
+    padding-right: 1em;
+}
+div.clear{
+    clear: both;
+}
+div.label{
+    font-size: 80%;
+}
+div.bolded{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}

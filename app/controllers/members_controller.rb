@@ -10,6 +10,7 @@ class MembersController < ApplicationController
   # GET /members/1
   # GET /members/1.json
   def show
+    @member = Member.find(params[:id])
   end
 
   # GET /members/new
@@ -28,7 +29,7 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
+        format.html { redirect_to members_url, notice: 'Member was successfully created.' }
         format.json { render :show, status: :created, location: @member }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.fetch(:member, {})
+      params.require(:member).permit(:first_name, :last_name, :email, :height_in_inches, :weight_in_lb, :isPublic, :interests)
     end
 end

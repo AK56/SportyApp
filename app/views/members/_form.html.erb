@@ -10,7 +10,28 @@
       </ul>
     </div>
   <% end %>
-
+  <div id="first_name_field" class="field">
+    <%= form.label 'First Name: '%>
+    <%= form.text_field :first_name %>
+  </div>
+  <div id="last_name_field" class="field">
+    <%= form.label 'Last Name:  '%>
+    <%= form.text_field :last_name %>
+  </div>
+  <div id="email_field" class="field">
+    <%= form.label 'Email:  '%>
+    <%= form.text_field :email %>
+  </div>
+  <div class="clear"></div>
+  <div id="height_name_field" class="field">
+    <%= form.label 'Height: '%>
+    <%= form.text_field :height_in_inches %>
+  </div>
+  <div id="weight_name_field" class="field">
+    <%= form.label 'Weight: '%>
+    <%= form.text_field :weight_in_lb %>
+  </div>
+  <div class="clear"></div>
   <div class="actions">
     <%= form.submit %>
   </div>

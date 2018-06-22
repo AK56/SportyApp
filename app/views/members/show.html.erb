@@ -1,4 +1,32 @@
 <p id="notice"><%= notice %></p>
-
+<div class="bolded">Member</div>
+<div class="field">
+	<div id="first_name_label" class="label">First Name:</div>
+	<div id="first_name_value" class="value"><%= @member.first_name %></div>
+</div>
+<div class="field">
+	<div id="last_name_label" class="label">Last Name:</div>
+	<div id="last_name_value" class="value"><%= @member.last_name %></div>
+</div>
+<div class="field">
+	<div id="email_name_label" class="label">Email:</div>
+	<div id="email_name_value" class="value"><%= @member.email %></div>
+</div>
+<div class="field">
+	<div id="height_name_label" class="label">Height:</div>
+	<div id="height_name_value" class="value"><%= @member.height_in_inches %></div>
+</div>
+<div class="field">
+	<div id="weight_name_label" class="label">Weight:</div>
+	<div id="weight_name_value" class="value"><%= @member.weight_in_lb %></div>
+</div>
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
+<div class="clear"></div>
+
+<div class="bolded">Teams</div>
+<% @member.teams.each do |team| %>
+	<div class="field">
+		<div id="team_name_value" class="value"><%= team.name %></div>	
+	</div>
+<% end %>
