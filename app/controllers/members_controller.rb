@@ -41,8 +41,10 @@ class MembersController < ApplicationController
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update
+    puts member_params.inspect
     respond_to do |format|
       if @member.update(member_params)
+        @member.avatar.attach(member_params[:avatar]) unless member_params[:avatar].nil?
         format.html { redirect_to @member, notice: 'Member was successfully updated.' }
         format.json { render :show, status: :ok, location: @member }
       else
@@ -70,6 +72,6 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:first_name, :last_name, :email, :height_in_inches, :weight_in_lb, :isPublic, :interests)
+      params.require(:member).permit(:first_name, :last_name, :email, :height_in_inches, :weight_in_lb, :isPublic, :interests, :avatar)
     end
 end

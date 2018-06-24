@@ -10,6 +10,14 @@
       </ul>
     </div>
   <% end %>
+  <div id="avatar_field" class="field">
+    <% if member.avatar.attached? %>
+      <%= image_tag member.avatar, size: "100" %>
+    <% end %>
+    <div class="clear"></div>
+    <%= form.file_field :avatar %>
+  </div>
+  <div class="clear"></div>
   <div id="first_name_field" class="field">
     <%= form.label 'First Name: '%>
     <%= form.text_field :first_name %>
@@ -30,6 +38,10 @@
   <div id="weight_name_field" class="field">
     <%= form.label 'Weight: '%>
     <%= form.text_field :weight_in_lb %>
+  </div>
+  <div id="isPublic_field" class="field">
+    <%= form.label 'Profile Public?:  '%>
+    <%= form.select :isPublic, [true, false], :selected => member.isPublic %>
   </div>
   <div class="clear"></div>
   <div class="actions">

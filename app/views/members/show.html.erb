@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 <div class="bolded">Member</div>
 <div class="field">
+	<% if @member.avatar.attached? %>
+		<%= image_tag @member.avatar, size: "100" %>
+	<% end %>
+	<div class="clear"></div>
+</div>
+<div class="field">
 	<div id="first_name_label" class="label">First Name:</div>
 	<div id="first_name_value" class="value"><%= @member.first_name %></div>
 </div>
