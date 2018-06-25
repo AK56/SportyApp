@@ -14,5 +14,17 @@ div.label{
 div.bolded{
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+div.sub-bolded{
+    font-weight: normal;
+}
+div.member_interest_field{
+    float: left;
+    padding-right: 3em;
+    text-align: center;
+}
+#activity_duration{
+    width: 20px;
 }

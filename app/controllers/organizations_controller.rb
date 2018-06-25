@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
     
-    def summary
-        
+    def index
+        @teams = Team.all
     end
+
 end

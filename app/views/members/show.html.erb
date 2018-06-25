@@ -29,10 +29,30 @@
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
 <div class="clear"></div>
-
-<div class="bolded">Teams</div>
+<div class="bolded">Interested In:</div>
+	<% @member_interests.each do |sport| %>
+		<div class="member_interest_field">
+			<% if sport.icon.attached? %>
+				<%= image_tag sport.icon, size: "40" %>
+			<% end %>
+			<div id="interest_name" class="value"><%= sport.name %></div>
+		</div>
+	<% end %>
+</div>
+<div class="clear"></div>
+</br>
 <% @member.teams.each do |team| %>
-	<div class="field">
-		<div id="team_name_value" class="value"><%= team.name %></div>	
+	<div id="<%= team.name%>_team"class="field">
+		<div id="team_name_value" class="bolded">Team <%= team.name %></div>
+		<table>
+			<thead>
+				<th>Members</th>
+			</thead>
+			<tbody>
+				<% team.members.each do |team_member| %>
+					<tr><td><%= team_member.name %></td></tr>
+				<% end %>
+			</tbody>
+		</table>
 	</div>
 <% end %>
