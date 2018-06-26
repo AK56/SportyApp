@@ -25,6 +25,11 @@ div.member_interest_field{
     padding-right: 3em;
     text-align: center;
 }
-#activity_duration{
-    width: 20px;
+
+table.member_activity {
+    border-collapse: separate;
+}
+table.member_activity th{
+    background-color: aqua;
+    text-align: left;
 }
