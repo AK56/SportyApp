@@ -10,7 +10,6 @@ class MembersController < ApplicationController
   # GET /members/1
   # GET /members/1.json
   def show
-    @member = Member.find(params[:id])
     @member_interests = Sport.where(id: @member.interests)
   end
 
@@ -21,6 +20,10 @@ class MembersController < ApplicationController
 
   # GET /members/1/edit
   def edit
+    respond_to do |format|
+      format.html {render :edit}
+      format.js{}
+    end
   end
 
   # POST /members
@@ -68,11 +71,11 @@ class MembersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_member
-      @member = Member.find(params[:id])
+      @member = Member.includes(:teams).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:first_name, :last_name, :email, :height_in_inches, :weight_in_lb, :isPublic, :avatar, interests:[])
+      params.require(:member).permit(:first_name, :last_name, :email, :height_in_inches, :weight_in_lb, :isPublic, :avatar, activities_attributes: [:id, :sport_id, :paticipation_date, :duration], interests:[])
     end
 end

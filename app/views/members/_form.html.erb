@@ -49,22 +49,14 @@
     <%= form.select :interests, Sport.all.collect {|s| [s.name, s.id]}, {}, {:multiple => true} %>
   </div>
   <div class="clear"></div>
-  <div id="member_participation" class="bolded">Input Activity</div>
-  <div class="field">
-    <%= form.label 'Pick a sport:  '%>
-    <%= form.select :activity_sport_id, Sport.all.collect {|s| [s.name, s.id]} %>
-  </div>
-  <div class="field">
-    <%= form.label 'Choose Date'%>
-    <%= form.date_select :activity_date %>
-  </div>
-  <div class="field">
-    <%= form.label 'Enter duration'%>
-    <%= form.text_field :duration_hours, :id => "activity_duration" %><span> Hrs.</span>
-    <%= form.text_field :duration_mins, :id => "activity_duration" %><span> Min.</span>
-  </div>
-  <div class="clear"></div>
+  <div class="bolded">Input Activity</div>
+  <%= form.fields_for(:activities) do |activity| %>
+    <%= render 'activity_fields', f: activity %>
+  <% end %>
+  <%= link_to_add_fields "Add Activity", form, :activities %>
+  <div class="clear"></div></br>
   <div class="actions">
     <%= form.submit %>
   </div>
+  <%= link_to 'Back', member_path(@member) %>
 <% end %>

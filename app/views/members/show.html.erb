@@ -1,42 +1,48 @@
 <p id="notice"><%= notice %></p>
-<div class="bolded">Member</div>
-<div class="field">
+<div id="member_show_details">
+	<div class="bolded">Member Info</div>
 	<% if @member.avatar.attached? %>
-		<%= image_tag @member.avatar, size: "100" %>
-	<% end %>
-	<div class="clear"></div>
-</div>
-<div class="field">
-	<div id="first_name_label" class="label">First Name:</div>
-	<div id="first_name_value" class="value"><%= @member.first_name %></div>
-</div>
-<div class="field">
-	<div id="last_name_label" class="label">Last Name:</div>
-	<div id="last_name_value" class="value"><%= @member.last_name %></div>
-</div>
-<div class="field">
-	<div id="email_name_label" class="label">Email:</div>
-	<div id="email_name_value" class="value"><%= @member.email %></div>
-</div>
-<div class="field">
-	<div id="height_name_label" class="label">Height:</div>
-	<div id="height_name_value" class="value"><%= @member.height_in_inches %></div>
-</div>
-<div class="field">
-	<div id="weight_name_label" class="label">Weight:</div>
-	<div id="weight_name_value" class="value"><%= @member.weight_in_lb %></div>
-</div>
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
-<div class="clear"></div>
-<div class="bolded">Interested In:</div>
-	<% @member_interests.each do |sport| %>
-		<div class="member_interest_field">
-			<% if sport.icon.attached? %>
-				<%= image_tag sport.icon, size: "40" %>
-			<% end %>
-			<div id="interest_name" class="value"><%= sport.name %></div>
+		<div id="member_avatar" class="field">
+			<%= image_tag @member.avatar, size: "100" %>
 		</div>
+		<div class="clear"></div>
+	<% end %>
+	<div class="field">
+		<div id="first_name_label" class="label">First Name:</div>
+		<div id="first_name_value" class="value"><%= @member.first_name %></div>
+	</div>
+	<div class="field">
+		<div id="last_name_label" class="label">Last Name:</div>
+		<div id="last_name_value" class="value"><%= @member.last_name %></div>
+	</div>
+	<div class="field">
+		<div id="email_name_label" class="label">Email:</div>
+		<div id="email_name_value" class="value"><%= @member.email %></div>
+	</div>
+	<div class="field">
+		<div id="height_name_label" class="label">Height:</div>
+		<div id="height_name_value" class="value"><%= @member.height_in_inches %></div>
+	</div>
+	<div class="field">
+		<div id="weight_name_label" class="label">Weight:</div>
+		<div id="weight_name_value" class="value"><%= @member.weight_in_lb %></div>
+	</div>
+	<%= link_to 'Edit', edit_member_path(@member) %> |
+</div>
+<div class="clear"></div>
+<div id="member_interests">
+	<% if @member_interests.size > 0 %>
+		<div class="bolded">Interested In:</div>
+		<% @member_interests.each do |sport| %>
+			<div class="member_interest_field">
+				<% if sport.icon.attached? %>
+					<%= image_tag sport.icon, size: "40" %>
+				<% end %>
+				<div id="interest_name" class="value"><%= sport.name %></div>
+			</div>
+		<% end %>
+	<% else %>
+		<div class="bolded">No Interests shown yet</div>
 	<% end %>
 </div>
 <div class="clear"></div>
@@ -56,3 +62,4 @@
 		</table>
 	</div>
 <% end %>
+<div class="clear"></div>

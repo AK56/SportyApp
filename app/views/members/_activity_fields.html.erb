@@ -1,0 +1,5 @@
+<fieldset>
+    <%= f.select :sport_id, Sport.all.collect {|s| [s.name, s.id]} %>
+    <%= f.date_field :paticipation_date %>
+    <%= f.select :duration, activity_durations %>
+</fieldset>

@@ -9,6 +9,8 @@ class Member < ApplicationRecord
     has_many :sports, through: :activities
     has_one_attached :avatar
 
+    accepts_nested_attributes_for :activities 
+    
     def name 
         "#{first_name} #{last_name}"
     end
