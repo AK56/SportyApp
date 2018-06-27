@@ -8,58 +8,30 @@
 		<div class="clear"></div>
 	<% end %>
 	<div class="field">
-		<div id="first_name_label" class="label">First Name:</div>
-		<div id="first_name_value" class="value"><%= @member.first_name %></div>
+		<span class="first_name_label">First Name:</span><br />
+		<%= @member.first_name %>
 	</div>
 	<div class="field">
-		<div id="last_name_label" class="label">Last Name:</div>
-		<div id="last_name_value" class="value"><%= @member.last_name %></div>
+		<span class="last_name_label">Last Name:</span><br />
+		<%= @member.last_name %>
 	</div>
 	<div class="field">
-		<div id="email_name_label" class="label">Email:</div>
-		<div id="email_name_value" class="value"><%= @member.email %></div>
+		<span class="email_label">Email:</span><br />
+		<%= @member.email %>
 	</div>
 	<div class="field">
-		<div id="height_name_label" class="label">Height:</div>
-		<div id="height_name_value" class="value"><%= @member.height_in_inches %></div>
+		<span class="height_label">Height:</span><br/>
+		<%= @member.height_in_inches %>
 	</div>
 	<div class="field">
-		<div id="weight_name_label" class="label">Weight:</div>
-		<div id="weight_name_value" class="value"><%= @member.weight_in_lb %></div>
+		<span class="weight_label">Weight:</span><br/>
+		<%= @member.weight_in_lb %>
 	</div>
-	<%= link_to 'Edit', edit_member_path(@member) %> |
+	<%= link_to 'Edit', edit_member_path(@member), :remote => true %> 
 </div>
 <div class="clear"></div>
-<div id="member_interests">
-	<% if @member_interests.size > 0 %>
-		<div class="bolded">Interested In:</div>
-		<% @member_interests.each do |sport| %>
-			<div class="member_interest_field">
-				<% if sport.icon.attached? %>
-					<%= image_tag sport.icon, size: "40" %>
-				<% end %>
-				<div id="interest_name" class="value"><%= sport.name %></div>
-			</div>
-		<% end %>
-	<% else %>
-		<div class="bolded">No Interests shown yet</div>
-	<% end %>
-</div>
+<%= render 'sports_interests' %>
 <div class="clear"></div>
 </br>
-<% @member.teams.each do |team| %>
-	<div id="<%= team.name%>_team"class="field">
-		<div id="team_name_value" class="bolded">Team <%= team.name %></div>
-		<table>
-			<thead>
-				<th>Members</th>
-			</thead>
-			<tbody>
-				<% team.members.each do |team_member| %>
-					<tr><td><%= team_member.name %></td></tr>
-				<% end %>
-			</tbody>
-		</table>
-	</div>
-<% end %>
+<%= render 'member_teams' %>
 <div class="clear"></div>

@@ -10,6 +10,9 @@ class MembersController < ApplicationController
   # GET /members/1
   # GET /members/1.json
   def show
+    # Eager loading teams and members of those teams, as this all will be displayed
+    # on member view
+    @member = Member.includes(teams: [:members]).find(params[:id])
     @member_interests = Sport.where(id: @member.interests)
   end
 
@@ -49,8 +52,8 @@ class MembersController < ApplicationController
     respond_to do |format|
       if @member.update(member_params)
         @member.avatar.attach(member_params[:avatar]) unless member_params[:avatar].nil?
-        format.html { redirect_to @member, notice: 'Member was successfully updated.' }
-        format.json { render :show, status: :ok, location: @member }
+        format.html { redirect_to my_profile_path, notice: 'Member was successfully updated.' }
+        format.json {}
       else
         format.html { render :edit }
         format.json { render json: @member.errors, status: :unprocessable_entity }

@@ -1,0 +1,15 @@
+<% @member.teams.each do |team| %>
+	<div id="<%= team.name%>_team"class="field">
+		<div id="team_name_value" class="bolded">Team <%= team.name %></div>
+		<table>
+			<thead>
+				<th>Members</th>
+			</thead>
+			<tbody>
+				<% team.members.each do |team_member| %>
+					<tr><td><%= team_member.name %></td></tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+<% end %>

@@ -1,0 +1,15 @@
+<div id="member_interests">
+	<% if @member_interests.size > 0 %>
+		<div class="bolded">Interested In:</div>
+		<% @member_interests.each do |sport| %>
+			<div class="member_interest_field">
+				<% if sport.icon.attached? %>
+					<%= image_tag sport.icon, size: "40" %>
+				<% end %>
+				<div id="interest_name" class="value"><%= sport.name %></div>
+			</div>
+		<% end %>
+	<% else %>
+		<div class="bolded">No Interests shown yet</div>
+	<% end %>
+</div>
