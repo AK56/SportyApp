@@ -48,7 +48,6 @@ class MembersController < ApplicationController
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update
-    puts member_params.inspect
     respond_to do |format|
       if @member.update(member_params)
         @member.avatar.attach(member_params[:avatar]) unless member_params[:avatar].nil?
@@ -79,6 +78,6 @@ class MembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params
-      params.require(:member).permit(:first_name, :last_name, :email, :height_in_inches, :weight_in_lb, :isPublic, :avatar, activities_attributes: [:id, :sport_id, :paticipation_date, :duration], interests:[])
+      params.require(:member).permit(:first_name, :last_name, :email, :height_in_inches, :weight_in_lb, :isPublic, :avatar, activities_attributes: [:id, :sport_id, :paticipation_date, :duration, :_destroy], interests:[])
     end
 end

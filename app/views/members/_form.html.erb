@@ -50,9 +50,16 @@
   </div>
   <div class="clear"></div>
   <div class="bolded">Input Activity</div>
-  <%= form.fields_for(:activities) do |activity| %>
-    <%= render 'activity_fields', f: activity %>
-  <% end %>
+  <table id="member_activity">
+    <tr>
+      <th>Pick a Sport</th>
+      <th>Choose a Date</th>
+      <th>Enter Duration</th>
+    </tr>
+    <%= form.fields_for(:activities) do |activity| %>
+      <%= render 'activity_fields', f: activity %>
+    <% end %>
+  </table>
   <%= link_to_add_fields "Add Activity", form, :activities %>
   <div class="clear"></div></br>
   <div class="actions">

@@ -1,9 +1,9 @@
 <% @member.teams.each do |team| %>
 	<div id="<%= team.name%>_team"class="field">
 		<div id="team_name_value" class="bolded">Team <%= team.name %></div>
-		<table>
+		<table id="member_team_members">
 			<thead>
-				<th>Members</th>
+				<th>Line Up</th>
 			</thead>
 			<tbody>
 				<% team.members.each do |team_member| %>

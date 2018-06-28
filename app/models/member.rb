@@ -9,7 +9,7 @@ class Member < ApplicationRecord
     has_many :sports, through: :activities
     has_one_attached :avatar
 
-    accepts_nested_attributes_for :activities 
+    accepts_nested_attributes_for :activities, allow_destroy: true 
     
     def name 
         "#{first_name} #{last_name}"

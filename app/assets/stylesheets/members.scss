@@ -4,6 +4,9 @@
 div.field{
     float: left;
     padding-right: 1em;
+    span {
+        font-weight: bold;
+    }
 }
 div.clear{
     clear: both;
@@ -26,10 +29,13 @@ div.member_interest_field{
     text-align: center;
 }
 
-table.member_activity {
+table#member_activity {
     border-collapse: separate;
+    th { 
+        background-color: aqua;
+        text-align: center;
+    }
 }
-table.member_activity th{
-    background-color: aqua;
-    text-align: left;
+table#member_team_members th{
+    text-align: center;
 }

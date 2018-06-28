@@ -1,37 +1,41 @@
 <p id="notice"><%= notice %></p>
-<div id="member_show_details">
-	<div class="bolded">Member Info</div>
-	<% if @member.avatar.attached? %>
-		<div id="member_avatar" class="field">
-			<%= image_tag @member.avatar, size: "100" %>
+<% unless !@member.isPublic %>
+	<div id="member_show_details">
+		<div class="bolded">Member Info</div>
+		<% if @member.avatar.attached? %>
+			<div id="member_avatar" class="field">
+				<%= image_tag @member.avatar, size: "100" %>
+			</div>
+			<div class="clear"></div>
+		<% end %>
+		<div class="field">
+			<span class="first_name_label">First Name:</span><br />
+			<%= @member.first_name %>
 		</div>
-		<div class="clear"></div>
-	<% end %>
-	<div class="field">
-		<span class="first_name_label">First Name:</span><br />
-		<%= @member.first_name %>
+		<div class="field">
+			<span class="last_name_label">Last Name:</span><br />
+			<%= @member.last_name %>
+		</div>
+		<div class="field">
+			<span class="email_label">Email:</span><br />
+			<%= @member.email %>
+		</div>
+		<div class="field">
+			<span class="height_label">Height:</span><br/>
+			<%= @member.height_in_inches %>
+		</div>
+		<div class="field">
+			<span class="weight_label">Weight:</span><br/>
+			<%= @member.weight_in_lb %>
+		</div>
+		<%= link_to 'Edit', edit_member_path(@member), :remote => true %> 
 	</div>
-	<div class="field">
-		<span class="last_name_label">Last Name:</span><br />
-		<%= @member.last_name %>
-	</div>
-	<div class="field">
-		<span class="email_label">Email:</span><br />
-		<%= @member.email %>
-	</div>
-	<div class="field">
-		<span class="height_label">Height:</span><br/>
-		<%= @member.height_in_inches %>
-	</div>
-	<div class="field">
-		<span class="weight_label">Weight:</span><br/>
-		<%= @member.weight_in_lb %>
-	</div>
-	<%= link_to 'Edit', edit_member_path(@member), :remote => true %> 
-</div>
-<div class="clear"></div>
-<%= render 'sports_interests' %>
-<div class="clear"></div>
-</br>
-<%= render 'member_teams' %>
-<div class="clear"></div>
+	<div class="clear"></div>
+	<%= render 'sports_interests' %>
+	<div class="clear"></div>
+	</br>
+	<%= render 'member_teams' %>
+	<div class="clear"></div>
+<% else %>
+	<div class="bolded">Member Profile is not public</div>
+<% end %>
