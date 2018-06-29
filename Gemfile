@@ -38,6 +38,9 @@ gem "google-cloud-storage", "~> 1.8", require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Build charts 
+gem 'chartkick'
+gem 'groupdate'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

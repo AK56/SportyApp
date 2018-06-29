@@ -12,6 +12,11 @@
   <tbody>
     <% @members.each do |member| %>
       <tr>
+        <% if member.avatar.attached? %>
+          <td><%= image_tag member.avatar, size: "50" %></td>
+        <% else %>
+          <td></td>
+        <% end %>
         <td><%= h member.first_name %></td>
         <td><%= link_to 'Show', member %></td>
         <td><%= link_to 'Edit', edit_member_path(member) %></td>

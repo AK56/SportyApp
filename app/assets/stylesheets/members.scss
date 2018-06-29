@@ -28,7 +28,9 @@ div.member_interest_field{
     padding-right: 3em;
     text-align: center;
 }
-
+div#member_activity_chart{
+    width: 100%;
+}
 table#member_activity {
     border-collapse: separate;
     th { 

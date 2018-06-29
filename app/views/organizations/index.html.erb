@@ -2,20 +2,13 @@
 
 <h1>Welcome to Rocklin High's Page</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Here are the Teams:</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @teams.each do |team| %>
-      <tr>
-        <td><%= h team.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<% @teams.each do |team| %>
+  <div id="team_activity_chart">
+    <div class="bolded">Team <%= team.name %> Activity</div>
+    <%= column_chart team.members.map {|member|
+      {name: member.name, data: member.activities.group_by_day(:paticipation_date, last: 10).map {|d| [d.paticipation_date, d.duration]}}}, xtitle: "Participation Date", ytitle: "Duration in mins." %>
+  </div>
+<% end %>
+</div>
+<div class="clear"></div>
 <br>

@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<div id="member_activity_chart" class="field">
+	<b>Member Activity</b>
+	<%= line_chart member_activity_chart_path(@member), xtitle: "Participation Date", ytitle: "Activity in mins", messages: {empty: "No Activity"} %>
+</div>
+<div class="clear"></div>
 <% unless !@member.isPublic %>
 	<div id="member_show_details">
 		<div class="bolded">Member Info</div>
@@ -28,13 +33,13 @@
 			<span class="weight_label">Weight:</span><br/>
 			<%= @member.weight_in_lb %>
 		</div>
-		<%= link_to 'Edit', edit_member_path(@member), :remote => true %> 
+		<%= link_to 'Edit', edit_member_path(@member) %> 
+		<div class="clear"></div>
+		<%= render 'sports_interests' %>
+		<div class="clear"></div>
+		</br>
+		<%= render 'member_teams' %>
 	</div>
-	<div class="clear"></div>
-	<%= render 'sports_interests' %>
-	<div class="clear"></div>
-	</br>
-	<%= render 'member_teams' %>
 	<div class="clear"></div>
 <% else %>
 	<div class="bolded">Member Profile is not public</div>

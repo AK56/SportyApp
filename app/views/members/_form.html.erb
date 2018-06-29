@@ -46,7 +46,7 @@
   <div class="clear"></div>
   <div id="interests_field" class="field">
     <%= form.label 'Interested In:  '%>
-    <%= form.select :interests, Sport.all.collect {|s| [s.name, s.id]}, {}, {:multiple => true} %>
+    <%= form.select :interests, @sports, {}, {:multiple => true} %>
   </div>
   <div class="clear"></div>
   <div class="bolded">Input Activity</div>
