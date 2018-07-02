@@ -24,4 +24,4 @@ test:
 
 production:
   <<: *default
-  database: sporty_production
+  url: <%= ENV['DATABASE_URL'] %>
