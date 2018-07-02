@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_06_24_203042) do
 
-  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", id: :serial, force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_06_24_203042) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_storage_blobs", id: :serial, force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_06_24_203042) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "activities", id: :serial, force: :cascade do |t|
     t.bigint "member_id"
     t.bigint "sport_id"
     t.date "paticipation_date"
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_06_24_203042) do
     t.index ["sport_id"], name: "index_activities_on_sport_id"
   end
 
-  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "members", id: :serial, force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -56,7 +59,7 @@ ActiveRecord::Schema.define(version: 2018_06_24_203042) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "members_teams", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "members_teams", id: false, force: :cascade do |t|
     t.bigint "member_id", null: false
     t.bigint "team_id", null: false
     t.datetime "created_at", null: false
@@ -65,20 +68,20 @@ ActiveRecord::Schema.define(version: 2018_06_24_203042) do
     t.index ["team_id"], name: "index_members_teams_on_team_id"
   end
 
-  create_table "organizations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "organizations", id: :serial, force: :cascade do |t|
     t.string "name"
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "sports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "sports", id: :serial, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "teams", id: :serial, force: :cascade do |t|
     t.bigint "organization_id"
     t.string "name"
     t.datetime "created_at", null: false
