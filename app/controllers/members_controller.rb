@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_action :set_member, only: [:edit, :update, :destroy]
-  before_action :set_sports, only: [:edit, :show, :update]
+  before_action :set_sports, only: [:new, :edit, :show, :update]
   # GET /members
   # GET /members.json
   def index
