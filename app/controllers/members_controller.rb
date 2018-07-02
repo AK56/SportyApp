@@ -71,7 +71,7 @@ class MembersController < ApplicationController
   end
 
   def activity_chart
-    @member = Member.find(params[:id])
+    @member = Member.includes(:activities).find(params[:id])
     # Get user participation for a week
     weeks_data = @member.activities.group_by_day(:paticipation_date, last: 8).map {|d| [d.paticipation_date, d.duration]}
     render json: weeks_data

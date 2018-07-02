@@ -33,7 +33,8 @@
 			<span class="weight_label">Weight:</span><br/>
 			<%= @member.weight_in_lb %>
 		</div>
-		<%= link_to 'Edit', edit_member_path(@member) %> 
+		<%= link_to 'Edit', edit_member_path(@member), class: 'btn btn-primary' %> 
+		<%= link_to 'Back', members_path, class: 'btn btn-info' %>
 		<div class="clear"></div>
 		<%= render 'sports_interests' %>
 		<div class="clear"></div>
@@ -43,4 +44,5 @@
 	<div class="clear"></div>
 <% else %>
 	<div class="bolded">Member Profile is not public</div>
+	<%= link_to 'Back', members_path, class: 'btn btn-info' %>
 <% end %>
