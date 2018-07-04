@@ -64,7 +64,6 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.1)
-    chartkick (2.3.5)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.2.0)
@@ -107,8 +106,6 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
-    groupdate (4.0.1)
-      activesupport (>= 4.2)
     httpclient (2.8.3)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
@@ -145,7 +142,7 @@ GEM
     multi_json (1.13.1)
     multipart-post (2.0.0)
     nio4r (2.3.1)
-    nokogiri (1.8.3-x64-mingw32)
+    nokogiri (1.8.4-x64-mingw32)
       mini_portile2 (~> 2.3.0)
     os (0.9.6)
     pg (1.0.0-x64-mingw32)
@@ -217,9 +214,6 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    turbolinks (5.1.1)
-      turbolinks-source (~> 5.1)
-    turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     tzinfo-data (1.2018.5)
@@ -246,11 +240,9 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.7)
   byebug
   capybara (>= 2.15, < 4.0)
-  chartkick
   chromedriver-helper
   duktape
   google-cloud-storage (~> 1.8)
-  groupdate
   jbuilder (~> 2.5)
   jquery-rails
   pg
@@ -258,7 +250,6 @@ DEPENDENCIES
   rails (~> 5.2.0)
   sass-rails (~> 5.0)
   selenium-webdriver
-  turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)

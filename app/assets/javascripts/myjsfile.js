@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  alert('helo');
   $("form").on('click', '#add_activity_fields', function(event) {
     var regexp, time;
     time = new Date().getTime();
@@ -13,3 +12,19 @@ $(document).ready(function() {
     event.preventDefault();
   });
 });
+
+/*function addActivity(){
+  ele = document.getElementById('add_activity_fields');
+  time = new Date().getTime();
+  regexp = new RegExp(ele.getAttribute('data-id'), 'g');
+  row_string = ele.getAttribute('data-fields').replace(regexp, time);
+  row = new DOMParser().parseFromString(row_string, "text/xml").firstChild;
+  table = ele.previousElementSibling;
+  table.appendChild(row);
+  console.log('Adding activity');
+}
+
+function removeActivity(){
+  console.log('removing activity');
+}
+*/

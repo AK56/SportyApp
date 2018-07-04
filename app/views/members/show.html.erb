@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div id="member_activity_chart" class="field">
 	<b>Member Activity</b>
-	<%= line_chart member_activity_chart_path(@member), xtitle: "Participation Date", ytitle: "Activity in mins", messages: {empty: "No Activity"} %>
 </div>
 <div class="clear"></div>
 <% unless !@member.isPublic %>

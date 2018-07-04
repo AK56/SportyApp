@@ -69,7 +69,7 @@ class MembersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=begin
   def activity_chart
     @member = Member.includes(:activities).find(params[:id])
     puts @member.inspect
@@ -77,7 +77,7 @@ class MembersController < ApplicationController
     weeks_data = @member.activities.group_by_day(:paticipation_date, last: 8).group(:id).map {|d| [d.paticipation_date, d.duration]}
     render json: weeks_data
   end
-
+=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_member

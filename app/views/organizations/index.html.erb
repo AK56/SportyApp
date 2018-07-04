@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Welcome to AH - Roseville</h1>
+<h1>Welcome to Organziation Home</h1>
 
 <% @teams.each do |team| %>
   <div id="team_activity_chart">
-    <div class="bolded">Team <%= team.name %> Activity</div>
-    <%= column_chart team.members.map {|member|
-      {name: member.name, data: member.activities.group_by_day(:paticipation_date, last: 10).group(:id).map {|d| [d.paticipation_date, d.duration]}}}, xtitle: "Participation Date", ytitle: "Duration in mins." %>
-  </div>
+    <div class="bolded">Team Activity</div>
+    </div>
 <% end %>
 </div>
 <div class="clear"></div>
