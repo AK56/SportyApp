@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 2018_06_24_203042) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "teams", id: :serial, force: :cascade do |t|
+    t.bigint "organization_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_teams_on_organization_id"
+  end
+  
   create_table "members_teams", id: false, force: :cascade do |t|
     t.bigint "member_id", null: false
     t.bigint "team_id", null: false
@@ -79,14 +87,6 @@ ActiveRecord::Schema.define(version: 2018_06_24_203042) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "teams", id: :serial, force: :cascade do |t|
-    t.bigint "organization_id"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_teams_on_organization_id"
   end
 
 end
