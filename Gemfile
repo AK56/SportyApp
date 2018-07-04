@@ -40,8 +40,8 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 # Build charts 
-#gem 'chartkick', "~> 2.3.0"
-#gem 'groupdate'
+gem 'chartkick', "~> 2.3.0"
+gem 'groupdate'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
