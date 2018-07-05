@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
-<div id="member_activity_chart" class="field">
-	<b>Member Activity</b>
-	<%= line_chart member_activity_chart_path(@member), xtitle: "Participation Date", ytitle: "Activity in mins", messages: {empty: "No Activity"} %>
-</div>
+<%= line_chart member_activity_chart_path(@member), id: "member_activity_chart", xtitle: "Participation Date", ytitle: "Activity in mins", messages: {empty: "No Activity"} %>
+
 <div class="clear"></div>
 <% unless !@member.isPublic %>
 	<div id="member_show_details">
@@ -26,11 +24,11 @@
 			<%= @member.email %>
 		</div>
 		<div class="field">
-			<span class="height_label">Height:</span><br/>
+			<span class="height_label">Height(inches):</span><br/>
 			<%= @member.height_in_inches %>
 		</div>
 		<div class="field">
-			<span class="weight_label">Weight:</span><br/>
+			<span class="weight_label">Weight(lbs):</span><br/>
 			<%= @member.weight_in_lb %>
 		</div>
 		<%= link_to 'Edit', edit_member_path(@member), class: 'btn btn-primary' %> 

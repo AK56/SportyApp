@@ -70,11 +70,16 @@ class MembersController < ApplicationController
     end
   end
 
+  # endpoint for buidling member activity data set
   def activity_chart
     @member = Member.includes(:activities).find(params[:id])
+    puts @member.inspect
+    data = []
     # Get user participation for a week
-    weeks_data = @member.activities.group_by_day(:paticipation_date, last: 8).group(:id).map {|d| [d.paticipation_date, d.duration]}
-    render json: weeks_data
+    ((Date.today - 8)..Date.today).each do |date|
+      data << [date, @member.activities.where(paticipation_date: date).sum(:duration)]
+    end  
+    render json: data
   end
 
   private
