@@ -14,6 +14,7 @@ class MembersController < ApplicationController
     # on member's view
     @member = Member.with_attached_avatar.includes(teams: [:members]).find(params[:id])
     @member_interests = Sport.with_attached_icon.where(id: @member.interests)
+    @profile_view = params[:profile_view]
   end
 
   # GET /members/new

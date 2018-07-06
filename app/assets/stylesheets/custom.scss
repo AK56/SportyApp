@@ -71,30 +71,25 @@ text-decoration: none;
 /* footer */
 
 footer {
-    margin-top: 45px;
-    padding-top: 5px;
+    width: 100%;
+    padding-top: 10px;
     border-top: 1px solid #eaeaea;
     color: #777;
-}
-
-footer a {
-color: #555;
-}
-
-footer a:hover {
-color: #222;
-}
-
-footer small {
-float: left;
-}
-
-footer ul {
-float: right;
-list-style: none;
-}
-
-footer ul li {
-float: left;
-margin-left: 15px;
+    a {
+        color: #555;
+    }
+    a:hover {
+        color: #222;
+    }
+    small {
+        float: left;
+    }
+    ul {
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+            margin-left: 15px;
+        }
+    }
 }

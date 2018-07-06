@@ -1,0 +1,27 @@
+<div class="bolded">Member Info</div>
+<% if @member.avatar.attached? %>
+    <div id="member_avatar" class="field">
+        <%= image_tag @member.avatar, size: "100" %>
+    </div>
+    <div class="clear"></div>
+<% end %>
+<div class="field">
+    <span class="first_name_label">First Name:</span><br />
+    <%= @member.first_name %>
+</div>
+<div class="field">
+    <span class="last_name_label">Last Name:</span><br />
+    <%= @member.last_name %>
+</div>
+<div class="field">
+    <span class="email_label">Email:</span><br />
+    <%= @member.email %>
+</div>
+<div class="field">
+    <span class="height_label">Height(inches):</span><br/>
+    <%= @member.height_in_inches %>
+</div>
+<div class="field">
+    <span class="weight_label">Weight(lbs):</span><br/>
+    <%= @member.weight_in_lb %>
+</div>

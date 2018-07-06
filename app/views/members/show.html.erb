@@ -1,38 +1,16 @@
 <p id="notice"><%= notice %></p>
-<%= line_chart member_activity_chart_path(@member), id: "member_activity_chart", xtitle: "Participation Date", ytitle: "Activity in mins", messages: {empty: "No Activity"} %>
-
+<% unless @profile_view %>
+	<%= line_chart member_activity_chart_path(@member), id: "member_activity_chart", xtitle: "Participation Date", ytitle: "Activity in mins", messages: {empty: "No Activity"} %>
+<% end %>
 <div class="clear"></div>
-<% unless !@member.isPublic %>
+<% if @member.isPublic || @profile_view %>
 	<div id="member_show_details">
-		<div class="bolded">Member Info</div>
-		<% if @member.avatar.attached? %>
-			<div id="member_avatar" class="field">
-				<%= image_tag @member.avatar, size: "100" %>
-			</div>
-			<div class="clear"></div>
+		<%= render 'member_details' %>
+		<% unless !@profile_view %>
+			<%= link_to 'Edit', edit_member_path(@member), class: 'btn btn-primary' %> 
+		<% else %>
+			<%= link_to 'Go Back', members_path, class: 'btn btn-info' %>
 		<% end %>
-		<div class="field">
-			<span class="first_name_label">First Name:</span><br />
-			<%= @member.first_name %>
-		</div>
-		<div class="field">
-			<span class="last_name_label">Last Name:</span><br />
-			<%= @member.last_name %>
-		</div>
-		<div class="field">
-			<span class="email_label">Email:</span><br />
-			<%= @member.email %>
-		</div>
-		<div class="field">
-			<span class="height_label">Height(inches):</span><br/>
-			<%= @member.height_in_inches %>
-		</div>
-		<div class="field">
-			<span class="weight_label">Weight(lbs):</span><br/>
-			<%= @member.weight_in_lb %>
-		</div>
-		<%= link_to 'Edit', edit_member_path(@member), class: 'btn btn-primary' %> 
-		<%= link_to 'Back', members_path, class: 'btn btn-info' %>
 		<div class="clear"></div>
 		<%= render 'sports_interests' %>
 		<div class="clear"></div>
@@ -42,5 +20,5 @@
 	<div class="clear"></div>
 <% else %>
 	<div class="bolded">Member Profile is not public</div>
-	<%= link_to 'Back', members_path, class: 'btn btn-info' %>
+	<%= link_to 'Go Back', members_path, class: 'btn btn-info' %>
 <% end %>

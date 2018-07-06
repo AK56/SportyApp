@@ -20,12 +20,8 @@
         <td><strong><%= h member.first_name %></strong></td>
         <td><strong><%= h member.last_name %></strong></td>
         <td><%= link_to 'Show', member, class: 'btn btn-info' %></td>
-        <td><%= link_to 'Edit', edit_member_path(member), class: 'btn btn-primary' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Member', new_member_path %>
