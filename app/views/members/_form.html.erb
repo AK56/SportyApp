@@ -46,7 +46,7 @@
   <div class="clear"></div>
   <div id="interests_field" class="field">
     <%= form.label 'Interested In:  '%>
-    <%= form.select :interests, @sports, {}, {:multiple => true} %>
+    <%= form.select :interests, @sports, {}, {:multiple => true, :class => 'form-control selectpicker'} %>
   </div>
   <div class="clear"></div>
   <div class="bolded">Input Activity</div>
