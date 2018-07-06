@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "long-sum-208205",
+  "client_email": "sporty-app@long-sum-208205.iam.gserviceaccount.com",
+  "client_id": "114777674420351198022",
+  "private_key_id": "471f6c5df1894090c58dfa117277aaad834b0322",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCYPdfH6UpFnnpk\nlpnRfPTAJMXnK7ItlW79Nh3M7mUbI62GmJlmJldkerfGqkU1M65MXUjmRkTRNT/H\ndrK23cJpPYq0x4tCeGAA+tYxgiU1cRho0j2OjQ7ebuuImoEruv7sp3oOBFDmmZON\ntYgqBWEzc9/YAEw7vCfpXMz2r3vZqlqRdxJVbzX3oyYa+4G+xT6FpkbV9sYji4IQ\ngVs4S+rzMAmu3IDivgoMLw40FfrQcm/lPgfeUhtqRsAeSnOBn43kCLFqvI+RduER\nIdme72aaXh9X2P10ItH8MuyFdCFxboPoC6zD0mZfUfb8TwHDGH4Q7+lzaRsld81e\nlwWvlw/BAgMBAAECggEAAhe2MRhwUxT9arI1QA9pz9Wm5hQQLsHjP4DFwmzedT6K\nzT2ovMzhyPmfhWVkGSSc4eOAXoXwaThu/X9mBSR23np1lHblCk9cRncsMuGulZWj\nN8GiuKRmDsGojtKiMZHa8jF6eISFANPIlvCRWWkvL7AJOiSwPOahB9Ck5+576H8t\nA5vmaye6OHxVrFrNfFwVQmuQTmDuuHvoRFErGaoq7O5pnmIg5CVWwAcbYhgse+hG\nCEAYuXciZurhwOh5AyCU3hE558SCycSA7TLI2rDbfe2MKnY2CjV/sGw7/S64MOxd\n60YCANBtGcMRjb8O+5aJ0dsTS9MiN30fH4VBZV5n3wKBgQDVYJyeE0g6f6sbBi0L\nQjBT6Fb20BwE9NXat7MzBUqfAgOe4TH+TaeU62f2FAmPV/sSm6ucpV7goytn7o7L\nYUuLDAk3rpDUT8aBm7sZLdONfHergDiFw8EpnfxuSGdq1s3ubI742vhmdxeGvryk\nvQJeHp7GYZDVC0e96wnkkRxClwKBgQC2pvR/CqXnkA+uDYTz2/PMlcgq2960dyOz\n4cBx8cG1iOCrLlwLnzScPamoz5vouWA4hsbDQPKCbI/PabBoKDYULxKqYRExKPoc\nMTuKjJEdnj6Fpfo4k3qNcMD2O+arPli7GLUg/bYrbZpzCkrfwL18hme7zFXGhHha\nSvKnN6ODZwKBgBGjB68FNv4m2VTFgOmiUe5NkQqbjwVV22tVrck00cMs3nG+eWxk\nrMphXtl3NIcVpZoXJesvvBTjR84yaLkk1KKsnwJsOmpiIa1K2v8sy4SxWg7h7UoZ\nMRkohtnywCGTmbfwXyzwpIGLrHUlxN/1A4IWE9ef7uG9KfPnvoyW9fgHAoGAdqBQ\nQwJjZdWGmYBmTQsZeFH/Qvax2XtXUMjZ+CcPrBtN71+YoGOyA5d4zQ6pL6jV+WBv\nTviriFGBxS/bRop3NPytnsKUK911M0I2bXGF/jp8WMjHjl8aRSpp6IJW+fjwH/OY\nD+k3m1T/7p9Mqa3AY1PXo3y+aMQ4dkwe9MOKCxkCgYEApHpvFYqTlwoHgMxqEWFT\nxkWYR71njuXuHEpDS0G9TRC+lplzffB0ZUktiuqVIKjTUyW8BW+3xd6yuMmHfh38\n7+i5t2O8ZkNDNX1TC2AbERSbHfdVP2/TxUzkq224t/nv/orbEvfnbVCmMn+GLPmU\nRWcjZbKOu27RjBpOBDy4tx0=\n-----END PRIVATE KEY-----\n",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sporty-app%40long-sum-208205.iam.gserviceaccount.com"
+}
