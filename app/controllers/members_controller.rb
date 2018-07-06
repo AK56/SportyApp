@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :set_member, only: [:edit, :update, :destroy]
+  before_action :set_member, only: [:edit, :update]
   before_action :set_sports, only: [:new, :edit, :show, :update]
   # GET /members
   # GET /members.json
@@ -59,7 +59,7 @@ class MembersController < ApplicationController
       end
     end
   end
-
+=begin
   # DELETE /members/1
   # DELETE /members/1.json
   def destroy
@@ -69,11 +69,10 @@ class MembersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=end
   # endpoint for buidling member activity data set
   def activity_chart
     @member = Member.includes(:activities).find(params[:id])
-    puts @member.inspect
     data = []
     # Get user participation for a week
     ((Date.today - 8)..Date.today).each do |date|
@@ -101,7 +100,7 @@ class MembersController < ApplicationController
       if member_params[:avatar]
         @member.avatar.attach(member_params[:avatar]) 
       elsif !@member.avatar.attached?
-          @member.avatar.attach(io: File.open('app/assets/images'), filename: 'app_logo.png', content_type: 'image/png')
+          @member.avatar.attach(io: File.open('app/assets/images'), filename: 'default_avatar.png', content_type: 'image/png')
       end
     end
 

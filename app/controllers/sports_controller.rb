@@ -41,7 +41,6 @@ class SportsController < ApplicationController
     # PATCH/PUT /sports/1
     # PATCH/PUT /sports/1.json
     def update
-      puts sport_params.inspect
       respond_to do |format|
         if @sport.update(sport_params)
           @sport.icon.attach(sport_params[:icon]) unless sport_params[:icon].nil?

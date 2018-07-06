@@ -12,7 +12,7 @@ The Stack:
 
 * Built upon Rails 5.2.0 with Ruby 2.4
 
-* Database is MySQL (innoDB engine)
+* Database is PostgreSQL
 
 * Deployed to Heroku
 
@@ -20,7 +20,7 @@ The Stack:
 
 Highlights:
 
-* Utilizing Active Storage to hold images for app objects like members and sports
+* Utilizing Active Storage to hold images for app objects like members and sports. Storage platform is Google     Cloud.
 
 * Using rails bootstrap-saas library to get going with a quick design holding header/footer
 
